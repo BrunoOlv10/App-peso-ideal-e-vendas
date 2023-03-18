@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-back-button slot="start"></ion-back-button>
+    <ion-title>Vendas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background">
+  <div function="calcularTotal">
+    <ion-item class="background">
+      <ion-label position="floating">Valor da primeira compra:</ion-label>
+      <ion-input type="number" [(ngModel)]="venda1"></ion-input>
+    </ion-item>
+    <ion-item class="background">
+      <ion-label position="floating">Valor da segunda compra:</ion-label>
+      <ion-input type="number" [(ngModel)]="venda2"></ion-input>
+    </ion-item>
+  </div>
+  <ion-item class="background"><ion-label position="floating">Pagamento:</ion-label>
+    <ion-select [(ngModel)]="pagamento">
+      <ion-select-option value="pix">Pix</ion-select-option>
+      <ion-select-option value="debito">Débito</ion-select-option>
+      <ion-select-option value="credito">Crédito</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-button expand="block" (click)="calcularValorFinal()">Calcular</ion-button>
+  <ion-item lines="none" class="background resultado" *ngIf="valorFinal !== 0">
+    <ion-label>Valor total:</ion-label>
+    <ion-note class="valor" slot="end">R$ {{ valorFinal | number:'1.2-2' }}</ion-note>
+  </ion-item>
+</ion-content>
