@@ -18,9 +18,9 @@
   </div>
   <ion-item class="background"><ion-label position="floating">Pagamento:</ion-label>
     <ion-select [(ngModel)]="pagamento">
-      <ion-select-option value="pix">Pix (10% de desconto)</ion-select-option>
-      <ion-select-option value="debito">Débito (sem desconto ou acréscimo)</ion-select-option>
-      <ion-select-option value="credito">Crédito (10% de acréscimo)</ion-select-option>
+      <ion-select-option value="pix">Pix (10% desc)</ion-select-option>
+      <ion-select-option value="debito">Débito (sem desc/acres)</ion-select-option>
+      <ion-select-option value="credito">Crédito (10% acres)</ion-select-option>
     </ion-select>
   </ion-item>
   <ion-button expand="block" (click)="calcularValorFinal()">Calcular</ion-button>
